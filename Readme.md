@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов»
 
-* Студент: [Oleg Parkhomenko](https://up.htmlacademy.ru/react/9/user/635705).
-* Наставник: `Неизвестно`.
+- Студент: [Oleg Parkhomenko](https://up.htmlacademy.ru/react/9/user/635705).
+- Наставник: [Семён Якушев](https://htmlacademy.ru/profile/id1118791).
 
 ---
 
