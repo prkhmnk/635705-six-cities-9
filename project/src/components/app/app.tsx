@@ -1,5 +1,9 @@
 import MainPage from '../main-page/main-page';
 
-export default function App(): JSX.Element {
-  return <MainPage />;
+type AppProps = {
+  adCount: number;
+}
+
+export default function App({adCount}: AppProps): JSX.Element {
+  return <MainPage adCount={adCount} />;
 }
