@@ -1,9 +1,11 @@
 import MainPage from '../main-page/main-page';
 
 type AppProps = {
-  adCount: number;
+  adCount: number,
+  isLoggedIn: boolean,
+  isAds: boolean
 }
 
-export default function App({adCount}: AppProps): JSX.Element {
-  return <MainPage adCount={adCount} />;
+export default function App({adCount, isLoggedIn, isAds}: AppProps): JSX.Element {
+  return <MainPage adCount={adCount} isLoggedIn={isLoggedIn} isAds={isAds} />;
 }
