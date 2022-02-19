@@ -6,14 +6,16 @@ const Setting: {
   AD_COUNT: number,
   isLoggedIn: boolean,
   isAds: boolean,
+  isFavorites: boolean,
 } = {
   AD_COUNT: 5,
   isLoggedIn: false,
-  isAds: false,
+  isAds: true,
+  isFavorites: true,
 };
 
 ReactDOM.render(
   <React.StrictMode>
-    <App adCount = {Setting.AD_COUNT} isLoggedIn={Setting.isLoggedIn} isAds={Setting.isAds} />
+    <App adCount = {Setting.AD_COUNT} isLoggedIn={Setting.isLoggedIn} isAds={Setting.isAds} isFavorites={Setting.isFavorites} />
   </React.StrictMode>,
   document.getElementById('root'));
