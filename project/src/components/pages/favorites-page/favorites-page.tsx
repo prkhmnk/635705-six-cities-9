@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
-import Header from '../header/header';
-import Footer from '../footer/footer';
+import Header from '../../header/header';
+import Footer from '../../footer/footer';
 import { useLocation } from 'react-router-dom';
 
 type FavoritesPageProps = {
