@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app';
+import { offers } from './mocks/offers';
+import { reviews } from './mocks/reviews';
+import { users } from './mocks/users';
 
 const Setting: {
   AD_COUNT: number,
@@ -16,6 +19,14 @@ const Setting: {
 
 ReactDOM.render(
   <React.StrictMode>
-    <App adCount = {Setting.AD_COUNT} isLoggedIn={Setting.isLoggedIn} isAds={Setting.isAds} isFavorites={Setting.isFavorites} />
+    <App
+      adCount = {Setting.AD_COUNT}
+      isLoggedIn={Setting.isLoggedIn}
+      isAds={Setting.isAds}
+      isFavorites={Setting.isFavorites}
+      offers={offers}
+      reviews={reviews}
+      users={users}
+    />
   </React.StrictMode>,
   document.getElementById('root'));
