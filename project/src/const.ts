@@ -5,3 +5,5 @@ export enum AppRoute {
   Main = '/',
   NotFound = '*',
 }
+
+export const MAX_RATING = 5;
