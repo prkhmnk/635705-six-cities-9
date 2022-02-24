@@ -1,21 +1,28 @@
+import { MouseEventHandler } from 'react';
 import { RentalHousingOffer } from '../../types/offer';
 import { getRating, capitalize } from '../../utils/utils';
 
 type PlaceCardProps = {
-  offer: RentalHousingOffer
+  offer: RentalHousingOffer,
+  mouseOverHandler: MouseEventHandler<HTMLElement> | undefined
+  mouseOutHandler: MouseEventHandler<HTMLElement> | undefined
 }
 
-export default function PlaceCard({offer}: PlaceCardProps): JSX.Element {
+export default function PlaceCard({ offer, mouseOverHandler, mouseOutHandler }: PlaceCardProps): JSX.Element {
 
   const { isPremium, previewImage, price, rating, title, type } = offer;
 
   return (
-    <article className='cities__place-card place-card'>
-      { isPremium && (
+    <article
+      className='cities__place-card place-card'
+      onMouseEnter={mouseOverHandler}
+      onMouseOut={mouseOutHandler}
+    >
+      {isPremium && (
         <div className='place-card__mark'>
           <span>Premium</span>
         </div>
-      ) }
+      )}
       <div className='cities__image-wrapper place-card__image-wrapper'>
         <a href='!#'>
           <img
