@@ -1,21 +1,14 @@
 import Header from '../../header/header';
-import PlaceCard from '../../place-card/place-card';
+import PlacesList from '../../places-list/places-list';
+import { RentalHousingOffer } from '../../../types/offer';
 
 type MainPageProps = {
-  adCount: number,
   isLoggedIn: boolean,
-  isAds: boolean
+  isAds: boolean,
+  offers: RentalHousingOffer[]
 }
 
-const getCards = (count: number): JSX.Element[] => {
-  const cardArr = [];
-  for (let i = 0; i < count; i++) {
-    cardArr.push(<PlaceCard key={i} />);
-  }
-  return cardArr;
-};
-
-export default function MainPage ({adCount, isLoggedIn, isAds}: MainPageProps): JSX.Element {
+export default function MainPage({ isLoggedIn, isAds, offers }: MainPageProps): JSX.Element {
   return (
     <div className='page page--gray page--main'>
       <Header isLoggedIn={isLoggedIn} />
@@ -78,9 +71,7 @@ export default function MainPage ({adCount, isLoggedIn, isAds}: MainPageProps): 
                     <li className='places__option' tabIndex={0}>Top rated first</li>
                   </ul>
                 </form>
-                <div className='cities__places-list places__list tabs__content'>
-                  {getCards(adCount)}
-                </div>
+                <PlacesList offers={offers} />
               </section>
             ) : (
               <section className="cities__no-places">

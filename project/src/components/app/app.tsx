@@ -11,7 +11,6 @@ import NotFoundPage from '../pages/not-found-page/not-found-page';
 import PrivateRoute from '../../hocs/private-route/private-route';
 
 type AppProps = {
-  adCount: number,
   isLoggedIn: boolean,
   isAds: boolean,
   isFavorites: boolean,
@@ -20,11 +19,11 @@ type AppProps = {
   users: OfferUser
 }
 
-export default function App({adCount, isLoggedIn, isAds, isFavorites, offers, reviews, users}: AppProps): JSX.Element {
+export default function App({ isLoggedIn, isAds, isFavorites, offers, reviews, users }: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={AppRoute.Main} element={<MainPage adCount={adCount} isLoggedIn={isLoggedIn} isAds={isAds} />} />
+        <Route path={AppRoute.Main} element={<MainPage isLoggedIn={isLoggedIn} isAds={isAds} offers={offers} />} />
         <Route path={AppRoute.Login} element={<LoginPage />} />
         <Route path={AppRoute.Favorites} element={
           <PrivateRoute isLoggedIn={isLoggedIn}>
