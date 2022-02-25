@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { MouseEventHandler } from 'react';
 import { RentalHousingOffer } from '../../types/offer';
 import { getRating, capitalize } from '../../utils/utils';
@@ -24,7 +25,7 @@ export default function PlaceCard({ offer, mouseOverHandler, mouseOutHandler }: 
         </div>
       )}
       <div className='cities__image-wrapper place-card__image-wrapper'>
-        <a href='!#'>
+        <Link to={`/offer/${offer.id}`}>
           <img
             className='place-card__image'
             src={images[0]}
@@ -32,7 +33,7 @@ export default function PlaceCard({ offer, mouseOverHandler, mouseOutHandler }: 
             height='200'
             alt={type}
           />
-        </a>
+        </Link>
       </div>
       <div className='place-card__info'>
         <div className='place-card__price-wrapper'>
@@ -54,7 +55,7 @@ export default function PlaceCard({ offer, mouseOverHandler, mouseOutHandler }: 
           </div>
         </div>
         <h2 className='place-card__name'>
-          <a href='!#'>{title}</a>
+          <Link to={`/offer/${offer.id}`}>{title}</Link>
         </h2>
         <p className='place-card__type'>{capitalize(type)}</p>
       </div>
