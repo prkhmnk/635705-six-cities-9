@@ -27,7 +27,7 @@ export default function App({ isLoggedIn, isAds, isFavorites, offers, reviews, u
         <Route path={AppRoute.Login} element={<LoginPage />} />
         <Route path={AppRoute.Favorites} element={
           <PrivateRoute isLoggedIn={isLoggedIn}>
-            <FavoritesPage isLoggedIn={isLoggedIn} isFavorites={isFavorites} />
+            <FavoritesPage isLoggedIn={isLoggedIn} isFavorites={isFavorites} offers={offers.filter((offer) => offer.isFavorite)} />
           </PrivateRoute>
         }
         />
